@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Welcome from './Welcome';
-import styled, { css } from 'styled-components';
 import Navbar from './Navbar';
 import { AppProvider } from './AppProvider';
+import Index from '../Settings/Index';
 
 class App extends Component {
   render() {
@@ -11,7 +10,7 @@ class App extends Component {
       <div className="App">
         <AppProvider>
           <Navbar />
-          <Welcome />
+          <Index />
         </AppProvider>
       </div>
     );
