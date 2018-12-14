@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-
+import { AppContext } from './AppProvider';
 const Logo = styled.div`
   font-size: 1.5em;
 `;
@@ -19,9 +19,21 @@ const Navbar = styled.nav`
 `;
 
 function ControlButton({ name, active }) {
-  return <ControlButtonElement active={active}>{name}</ControlButtonElement>;
+  return (
+    // Using .Consumer from the Context to pass props to child components
+    <AppContext.Consumer>
+      {({ page, setPage }) => (
+        <ControlButtonElement
+          active={page === name}
+          onClick={() => setPage(name)}>
+          {name}
+        </ControlButtonElement>
+      )}
+    </AppContext.Consumer>
+  );
 }
 
+// Main navbar component
 export default function() {
   return (
     <Navbar>
@@ -32,3 +44,5 @@ export default function() {
     </Navbar>
   );
 }
+
+// ControlButton is a component for the navbar links
