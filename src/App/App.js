@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './Navbar';
 import { AppProvider } from './AppProvider';
 import Index from '../Settings/Index';
+import Content from '../Shared/Content';
 
 class App extends Component {
   render() {
@@ -10,7 +11,9 @@ class App extends Component {
       <div className="App">
         <AppProvider>
           <Navbar />
-          <Index />
+          <Content>
+            <Index />
+          </Content>
         </AppProvider>
       </div>
     );

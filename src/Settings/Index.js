@@ -5,7 +5,7 @@ import Page from '../Shared/Page';
 
 export default function() {
   return (
-    <Page>
+    <Page name="Settings">
       <Welcome />
       <ConfirmButton />
     </Page>
