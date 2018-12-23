@@ -16,6 +16,7 @@ const ControlButtonElement = styled.div`
 const Navbar = styled.nav`
   display: grid;
   grid-template-columns: 180px auto 100px 100px;
+  padding: 15px 10px;
 `;
 
 function ControlButton({ name, active }) {
